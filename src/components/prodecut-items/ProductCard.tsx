@@ -1,6 +1,9 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 "use client";
 import { Checkbox, Skeleton } from "@mui/material";
+import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
+import WallpaperOutlinedIcon from "@mui/icons-material/WallpaperOutlined";
+import BedOutlinedIcon from "@mui/icons-material/BedOutlined";
 import {
   StyledCardBox,
   StyledCardImage,
@@ -23,35 +26,20 @@ import {
   StyledFooterBox,
   StyledLocationSkeleton,
   StyledImgSkelton,
-  StyledCheckPriceButton,
 } from "./styles/Styles";
 
 export interface ProductCardProps {
   image: string;
-  price?: number;
-  days?: number;
-  promo: string;
+  price: number;
   city: string;
-  resorts?: string;
   bed: number;
   bathRoom: number;
   floor: string;
-  currency?: string;
+  currency: string;
 }
 
 export function ProductCard(props: ProductCardProps) {
-  const {
-    image,
-    currency,
-    price,
-    days,
-    promo,
-    bed,
-    bathRoom,
-    floor,
-    city,
-    resorts,
-  } = props;
+  const { image, currency, price, bed, bathRoom, floor, city } = props;
 
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return (
@@ -65,57 +53,21 @@ export function ProductCard(props: ProductCardProps) {
       <StyledDetailsBox>
         <StyledSalaryAndLikedBox>
           <StyledSalaryBox>
-            
-              
-                {price || currency || days ? (
-                  <>
-                    <StyledPriceTypography variant="h5">
-                      {currency} {price}
-                    </StyledPriceTypography>
-                    <StyledNightTypography variant="body2">
-                      {`(${days}  'Night')`}
-                    </StyledNightTypography>
-                  </>
-                ) : (
-                  <Skeleton
-                    variant="rectangular"
-                    width="60%"
-                    animation={false}
-                  />
-                )}
-        
-           
+            <StyledPriceTypography variant="h5">
+              {currency} {price}
+            </StyledPriceTypography>
+            <StyledNightTypography variant="body2">
+              {` /mo`}
+            </StyledNightTypography>
           </StyledSalaryBox>
 
-          {image ? (
-            <StyledIconBox>
-              <Checkbox
-                {...label}
-                icon={<StyledFavoriteBorderIcon />}
-                checkedIcon={<StyledFavoriteIcon />}
-              />
-            </StyledIconBox>
-          ) : (
-            <Skeleton
-              variant="circular"
-              width={40}
-              height={40}
-              animation={false}
-            />
-          )}
         </StyledSalaryAndLikedBox>
 
-        {promo ? (
-          <StyledPromoTypography variant="h5">{promo}</StyledPromoTypography>
-        ) : (
-          <Skeleton variant="rectangular" width="60%" animation={false} />
-        )}
-
-        {resorts || city ? (
+        {city ? (
           <StyledSubTitleBox>
             <StyledPlaceOutlinedIcon />
             <StyledSubTitleTypography variant="body1">
-              {resorts} {city}
+              {city}
             </StyledSubTitleTypography>
           </StyledSubTitleBox>
         ) : (
@@ -130,9 +82,9 @@ export function ProductCard(props: ProductCardProps) {
         <StyledFooterBox>
           {bed ? (
             <StyledIconAndTypographyBox>
-              <StyledIconImage src={""} />
+              <BedOutlinedIcon />
               <StyledFooterTypography variant="body2">
-                {`${bed}  'Bedroom'`}
+                {`${bed} Bedroom`}
               </StyledFooterTypography>
             </StyledIconAndTypographyBox>
           ) : (
@@ -140,9 +92,9 @@ export function ProductCard(props: ProductCardProps) {
           )}
           {bathRoom ? (
             <StyledIconAndTypographyBox>
-              <StyledIconImage src={""} />
+              <BathtubOutlinedIcon />
               <StyledFooterTypography variant="body2">
-                {`${bathRoom}  'Bathroom')}`}
+                {`${bathRoom}  Bathroom`}
               </StyledFooterTypography>
             </StyledIconAndTypographyBox>
           ) : (
@@ -150,7 +102,7 @@ export function ProductCard(props: ProductCardProps) {
           )}
           {floor ? (
             <StyledIconAndTypographyBox>
-              <StyledIconImage src={""} />
+              <WallpaperOutlinedIcon />
               <StyledFooterTypography variant="body2">
                 {floor}
               </StyledFooterTypography>

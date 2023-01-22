@@ -4,6 +4,7 @@ import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { font2vw, px2vh, px2vw } from '@/utils/ResponsiveDimensions';
 
+
 export const StyledCardBox = styled(Box)(({ theme }) => ({
   width: px2vw(374),
   borderRadius: px2vw(8),
@@ -88,7 +89,6 @@ margin-bottom:${px2vh(8)};
 `
 
 export const StyledSubTitleTypography = styled(Typography)(({ theme }) => ({
-  color: '#F5F5F5',
   margin: `0 ${px2vw(8)}`
 }));
 
@@ -107,6 +107,10 @@ export const StyledIconImage = styled.img(({ theme }) => ({
   color: '#F5F5F5',
   fontSize: font2vw(20)
 }));
+
+
+
+
 
 export const StyledFooterTypography = styled(Typography)(({ theme }) => ({
   color: 'RGBA(60, 60, 67, 0.6)',

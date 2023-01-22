@@ -33,12 +33,13 @@ export function ProductList() {
         <ProductCard
           key={index}
           image={item.image}
-          promo={""}
           city={item.address}
           bed={item.number_of_bedrooms}
           bathRoom={item.number_of_bedrooms}
-          floor={item.type}
-        />
+          floor={item.area} 
+          price={item.price}
+          currency='EGP'
+                  />
       </>
     );
   });
