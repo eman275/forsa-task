@@ -1,48 +1,33 @@
-
 "use client";
-import { Box } from "@mui/material";
-import { StyledTwitterIcon, StyledButtonBox, StyledContainerBox, StyledDetailsBox, StyledFooterButton, StyledIconBox, StyledSocialBox, StyledSubTitleTypography, StyledTabsBox, StyledTitleTypography, StyledFacebookIcon, StyledInstagramIcon, StyledMainContainer } from "./styles/Styles";
+import {
+  StyledTwitterIcon,
+  StyledContainerBox,
+  StyledDetailsBox,
+  StyledIconBox,
+  StyledSocialBox,
+  StyledTitleTypography,
+  StyledFacebookIcon,
+  StyledInstagramIcon,
+} from "./styles/Styles";
 
+export interface FooterProps {}
 
-export interface FooterProps {
-  small?:boolean
-}
-
-export function Footer({small}: FooterProps) {
-
- 
-
+export function Footer() {
   return (
-    <StyledMainContainer  small={small}>
-      <StyledDetailsBox small={small}>
-        <Box>
-          <StyledTitleTypography variant="h4">
-            We Deliver your Vacation with Propertiano!
-          </StyledTitleTypography>
-          <StyledSubTitleTypography variant="body1">
-            We offer tailored services for all your traveling needs. Our host are wonderful, ready to accommodate your stay as you enjoy your vacation without worries.
-          </StyledSubTitleTypography>
-        </Box>
-        <StyledSubTitleTypography variant="body2">
-          © 2022  Propertiano.
-        </StyledSubTitleTypography>
+    <StyledContainerBox>
+      <StyledDetailsBox>
+        <StyledTitleTypography>Navigate</StyledTitleTypography>
+        <StyledTitleTypography>Home</StyledTitleTypography>
+        <StyledTitleTypography>Properties</StyledTitleTypography>
+        <StyledTitleTypography>Company</StyledTitleTypography>
       </StyledDetailsBox>
-      <StyledTabsBox small={small}>
-        <StyledButtonBox>
-          <StyledFooterButton>
-            Contact us
-          </StyledFooterButton>
-          <StyledFooterButton >
-            Privacy policy
-          </StyledFooterButton>
-          <StyledFooterButton>
-            Help center
-          </StyledFooterButton>
-          <StyledFooterButton>
-            About us
-          </StyledFooterButton>
-        </StyledButtonBox>
-        <StyledSocialBox>
+      <StyledDetailsBox>
+        <StyledTitleTypography>Support</StyledTitleTypography>
+        <StyledTitleTypography>Terms and conditions</StyledTitleTypography>
+        <StyledTitleTypography>FAQs</StyledTitleTypography>
+        <StyledTitleTypography>Contact us</StyledTitleTypography>
+      </StyledDetailsBox>
+      <StyledSocialBox>
           <StyledIconBox>
             <StyledTwitterIcon />
           </StyledIconBox>
@@ -53,11 +38,8 @@ export function Footer({small}: FooterProps) {
             <StyledInstagramIcon />
           </StyledIconBox>
         </StyledSocialBox>
-      </StyledTabsBox>
-
-    </StyledMainContainer>
+    </StyledContainerBox>
   );
 }
 
 export default Footer;
-

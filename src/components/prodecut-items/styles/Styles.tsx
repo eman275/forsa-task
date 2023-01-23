@@ -27,7 +27,7 @@ export const StyledLocationSkeleton = styled(Skeleton)`
 margin-bottom: ${px2vh(20)};
 `
 export const StyledDetailsBox = styled(Box)`
-padding:${px2vw(24)};
+padding:${px2vw(10)};
 `
 
 export const StyledSalaryBox = styled(Box)`
@@ -68,7 +68,7 @@ border-radius: 50%;
 export const StyledSalaryAndLikedBox = styled(Box)`
 display: flex;
 justify-content: space-between;
-margin-bottom:${px2vh(8)};
+// margin-bottom:${px2vh(8)};
 `
 
 export const StyledFavoriteIcon = styled(Favorite)`
@@ -94,7 +94,7 @@ export const StyledSubTitleTypography = styled(Typography)(({ theme }) => ({
 
 export const StyledDivider = styled(Divider)(({ theme }) => ({
   color: '#F5F5F5',
-  marginBottom: px2vh(20)
+  marginBottom: px2vh(5)
 }));
 
 export const StyledIconAndTypographyBox = styled(Box)`
